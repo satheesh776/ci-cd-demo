@@ -2,18 +2,14 @@ version: 0.2
 
 phases:
   install:
-    commands:
-      - echo "Nothing to install for a static site."
-
+    runtime-versions:
+      nodejs: 14
   build:
     commands:
-      - echo "Building static site..."
-
-  post_build:
-    commands:
-      - echo "Build complete."
-
+      - echo Build started
+      - mkdir -p dist
+      - cp -r * dist/
 artifacts:
   files:
     - '**/*'
-  base-directory: './'
+  base-directory: dist
