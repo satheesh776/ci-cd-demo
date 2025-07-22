@@ -8,7 +8,8 @@ phases:
     commands:
       - echo Build started
       - mkdir -p dist
-      - cp -r * dist/
+      - shopt -s extglob
+      - cp -r !(dist) dist/
 artifacts:
   files:
     - '**/*'
